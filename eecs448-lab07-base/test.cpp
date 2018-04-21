@@ -52,7 +52,7 @@ void Test::isEmptyTest()
             }
             else
             {
-                std::cout << "fail." << std::endl;
+                std::cout << "fail, returns true for element in list." << std::endl;
             }
         }
         catch(std::runtime_error& ex2)
@@ -187,8 +187,15 @@ void Test::addBackTest()
         {
             testList->addBack(*it);
         }
-
-        std::cout << "pass." << std::endl;
+    
+        if(testList->size() == 100)
+        {
+            std::cout << "pass." << std::endl;
+        }
+        else
+        {
+            std::cout << "fail, " << testList->size() << "elememt(s) in the list." << std::endl;
+        }
         
 
     }
@@ -214,7 +221,14 @@ void Test::addFrontTest()
             testList->addFront(*it);
         }
 
-        std::cout << "pass." << std::endl;
+        if(testList->size() == 100)
+        {
+            std::cout << "pass." << std::endl;
+        }
+        else
+        {
+            std::cout << "fail, " << testList->size() << "elememt(s) in the list." << std::endl;
+        }
     }
     catch (std::exception& ex)
     {
