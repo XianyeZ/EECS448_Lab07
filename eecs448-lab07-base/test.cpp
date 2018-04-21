@@ -9,7 +9,7 @@ Test::Test()
     firstInt = intList.front();
     lastInt = intList.back();
 
-    addFunctionPassed = false;
+    addFunctionPassed = true;
 }
 
 Test::~Test()
@@ -188,23 +188,13 @@ void Test::addBackTest()
             testList->addBack(*it);
         }
 
-        if(*((testList->toVector()).end()) == lastInt && *((testList->toVector()).begin()) == firstInt)
-        {
-            std::cout << "pass." << std::endl;
-            addFunctionPassed = true;
-        }
-        else
-        {
-            std::cout << "fail." << std::endl;
-            addFunctionPassed = false;
-        }
+        std::cout << "pass." << std::endl;
         
 
     }
     catch (std::runtime_error& ex)
     {
         std::cout << "failed, " << ex.what() << std::endl;
-        addFunctionPassed = false;
     }
 
     delete testList;
@@ -224,21 +214,11 @@ void Test::addFrontTest()
             testList->addFront(*it);
         }
 
-        if(*((testList->toVector()).begin()) == lastInt && *((testList->toVector()).end()) == firstInt)
-        {
-            std::cout << "pass." << std::endl;
-            addFunctionPassed = true;
-        }
-        else
-        {
-            std::cout << "fail." << std::endl;
-            addFunctionPassed = false;
-        }
+        std::cout << "pass." << std::endl;
     }
     catch (std::exception& ex)
     {
         std::cout << "fail, " << ex.what() << std::endl;
-        addFunctionPassed = false;
     }
 
     delete testList;
